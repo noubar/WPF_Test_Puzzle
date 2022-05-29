@@ -3,9 +3,9 @@ WPF simple ui application containing some puzzle to solve. Perfect for testing w
 
 ## Simple puzzle
 Contains three stages:
-> stage 1 : Switch the username with password and get the flag
-> stage 2 : Check the checkboxes as it is marked in the solution column and get the flag
-> stage 3 : Give the both flags
+1. stage 1 : Switch the username with password and get the flag
+2. stage 2 : Check the checkboxes as it is marked in the solution column and get the flag
+3. stage 3 : Give the both flags
 Congradulation the puzzle is succesfully solved.
 
 ## Complex puzzle
