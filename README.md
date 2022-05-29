@@ -11,7 +11,7 @@ Congradulation the puzzle is succesfully solved.
 
 ## Complex puzzle
 Contains 4 by 4 table filled with 3 state checkboxes. The 3 states are : **unchecked** state, checked with **tick** and checked with **rectangle**.
-To Solve this puzzle: it is needed at least one row or one column of checkboxes are checked by rectangles or one of both diagonal lines are checked by tickes.
+To Solve this puzzle: at least one row or one column of checkboxes is needed to be checked by rectangles or one of both diagonal lines are checked by tickes.
 
 ## Notifier
 Notifier application is an empty windows window which is intended to use to cover and block other elements on windows desktop.
