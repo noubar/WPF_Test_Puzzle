@@ -7,7 +7,7 @@ Contains three stages:
 2. stage 2 : Check the checkboxes as it is marked in the solution column and get the flag
 3. stage 3 : Give the both flags
 
-Congradulation the puzzle is succesfully solved.
+Congratulation the puzzle is succesfully solved.
 
 ## Complex puzzle
 Contains 4 by 4 table filled with 3 state checkboxes. The 3 states are : **unchecked** state, checked with **tick** and checked with **rectangle**.
