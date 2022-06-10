@@ -1,0 +1,6 @@
+﻿src/Notifier/bin
+src/ComplexPuzzle/bin
+src/SimplePuzzle/bin
+.vs
+src/ComplexPuzzle/obj
+src/SimplePuzzle/obj

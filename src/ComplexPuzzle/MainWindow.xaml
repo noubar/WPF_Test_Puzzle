@@ -1,0 +1,32 @@
+﻿<Window x:Class="ComplexPuzzle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ComplexPuzzle"
+        mc:Ignorable="d"
+        Title="ComplexPuzzle" Height="450" Width="225">
+    <DockPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <GroupBox Header="Puzzle">
+                    <DataGrid Name="puzzleGrid" AutomationProperties.AutomationId="PUZZLE" CanUserAddRows="False" ItemsSource="{Binding DataGridItems}" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="None" />
+                </GroupBox>
+                <StackPanel>
+                <RadioButton Name="tableValid" Content="TableValid" AutomationProperties.AutomationId="TableValid" />
+                <RadioButton Name="tableInvalid" Content="TableInvalid" AutomationProperties.AutomationId="TableInvalid" />
+                </StackPanel>
+                <Label Content="UserName" Foreground="Blue" />
+                <TextBox Name="usernameTextBox" AutomationProperties.AutomationId="USERNAME_TEXTBOX" Text="Test TextBox" Foreground="Green"/>
+                <Label Content="Password" Foreground="Blue" />
+                <TextBox Name="passwordTextBox" AutomationProperties.AutomationId="PASSWORD_TEXTBOX" Text="Test TextBox" Foreground="Green"/>
+                <StackPanel>
+                <RadioButton Name="usernameInvalid"  Content="UsernameInvalid" AutomationProperties.AutomationId="UsernameInvalid" />
+                <RadioButton Name="loginInvalid"  Content="LoginInvalid" AutomationProperties.AutomationId="LoginInvalid" />
+                <RadioButton Name="loginValid"  Content="LoginValid" AutomationProperties.AutomationId="LoginValid" />
+                </StackPanel>
+            <Button Name="complexBotton" AutomationProperties.AutomationId="COMPLEX_BUTTON" Click="complexBotton_Click" >input</Button>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

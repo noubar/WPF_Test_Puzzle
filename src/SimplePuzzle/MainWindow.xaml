@@ -1,0 +1,57 @@
+﻿<Window x:Class="SimplePuzzle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimplePuzzle"
+        mc:Ignorable="d"
+        Title="SimplePuzzle"
+        Height="533.931" Width="629.303"
+        ResizeMode="CanResize"
+        AutomationProperties.AutomationId="WPF_SIMPLE_PUZZLE" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Menu x:Key="ViewsMenu">
+                <MenuItem Header="Some MenuItem" />
+            </Menu>
+        </ResourceDictionary>
+    </Window.Resources>
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem />
+        </StatusBar>
+        <TabControl>
+            <TabItem Header="Stage 1" AutomationProperties.AutomationId="STAGE1_TABITEM">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="UserName" Foreground="Blue" />
+                    <TextBox Name="userNameTextBox" AutomationProperties.AutomationId="USERNAME_TEXTBOX" Text="Test TextBox" Foreground="Green"/>
+                    <Label Content="Password" Foreground="Blue" />
+                    <TextBox Name="passwordTextBox" AutomationProperties.AutomationId="PASSWORD_TEXTBOX" Text="Test TextBox" Foreground="Green"/>
+                    <Button Name="Stage1Botton" AutomationProperties.AutomationId="STAGE1_BUTTON" Click="Stage1Botton_Click" > input </Button>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Stage 2" AutomationProperties.AutomationId="STAGE2_TABITEM">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <GroupBox Header="Puzzle">
+                            <DataGrid Name="puzzleGrid" AutomationProperties.AutomationId="PUZZLE" CanUserAddRows="False" ItemsSource="{Binding DataGridItems}" CanUserDeleteRows="False" CanUserResizeRows="False" />
+                        </GroupBox>
+                        <Button Name="Stage2Botton" AutomationProperties.AutomationId="STAGE2_BUTTON" Click="Stage2Botton_Click" >input</Button>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Stage 3" AutomationProperties.AutomationId="STAGE3_TABITEM">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Flag1" Foreground="Blue" />
+                        <TextBox Name="flag1TextBox" AutomationProperties.AutomationId="FLAG1_TEXTBOX" Text="Test TextBox" Foreground="Green"/>
+                        <Label Content="Flag2" Foreground="Blue" />
+                        <TextBox Name="flag2TextBox" AutomationProperties.AutomationId="FLAG2_TEXTBOX" Text="Test TextBox" Foreground="Green"/>
+                        <Button Name="Stage3Botton" AutomationProperties.AutomationId="STAGE3_BUTTON" Click="Stage3Botton_Click" >input</Button>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
+
