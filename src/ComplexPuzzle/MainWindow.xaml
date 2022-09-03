@@ -5,28 +5,90 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ComplexPuzzle"
         mc:Ignorable="d"
-        Title="ComplexPuzzle" Height="450" Width="225">
+        Title="ComplexPuzzle" AutomationProperties.AutomationId="WPF_COMPLEX_PUZZLE" Height="450" Width="250">
     <DockPanel>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel>
-                <GroupBox Header="Puzzle">
-                    <DataGrid Name="puzzleGrid" AutomationProperties.AutomationId="PUZZLE" CanUserAddRows="False" ItemsSource="{Binding DataGridItems}" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="None" />
+                <GroupBox Header="Puzzle" IsEnabled="False">
+                    <DataGrid x:Name="PuzzleDataGrid" AutomationProperties.AutomationId="PUZZLE" 
+                              CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" 
+                              >
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding b0}" IsEnabled="False"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding b1}" IsEnabled="False" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding b2}" IsEnabled="False" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding b3}" IsEnabled="False" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding b4}" IsEnabled="False" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding b5}" IsEnabled="False" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding b6}" IsEnabled="False" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding b7}" IsEnabled="False" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </GroupBox>
                 <StackPanel>
-                <RadioButton Name="tableValid" Content="TableValid" AutomationProperties.AutomationId="TableValid" />
-                <RadioButton Name="tableInvalid" Content="TableInvalid" AutomationProperties.AutomationId="TableInvalid" />
+                    <RadioButton Name="tableValid" Content="TableValid" AutomationProperties.AutomationId="TableValid" />
+                    <RadioButton Name="tableInvalid" Content="TableInvalid" AutomationProperties.AutomationId="TableInvalid" />
                 </StackPanel>
                 <Label Content="UserName" Foreground="Blue" />
                 <TextBox Name="usernameTextBox" AutomationProperties.AutomationId="USERNAME_TEXTBOX" Text="Test TextBox" Foreground="Green"/>
                 <Label Content="Password" Foreground="Blue" />
                 <TextBox Name="passwordTextBox" AutomationProperties.AutomationId="PASSWORD_TEXTBOX" Text="Test TextBox" Foreground="Green"/>
                 <StackPanel>
-                <RadioButton Name="usernameInvalid"  Content="UsernameInvalid" AutomationProperties.AutomationId="UsernameInvalid" />
-                <RadioButton Name="loginInvalid"  Content="LoginInvalid" AutomationProperties.AutomationId="LoginInvalid" />
-                <RadioButton Name="loginValid"  Content="LoginValid" AutomationProperties.AutomationId="LoginValid" />
+                    <RadioButton Name="usernameInvalid"  Content="UsernameInvalid" AutomationProperties.AutomationId="UsernameInvalid" />
+                    <RadioButton Name="loginInvalid"  Content="LoginInvalid" AutomationProperties.AutomationId="LoginInvalid" />
+                    <RadioButton Name="loginValid"  Content="LoginValid" AutomationProperties.AutomationId="LoginValid" />
                 </StackPanel>
-            <Button Name="complexBotton" AutomationProperties.AutomationId="COMPLEX_BUTTON" Click="complexBotton_Click" >input</Button>
+                <Button Name="complexBotton" AutomationProperties.AutomationId="COMPLEX_BUTTON" Click="complexBotton_Click" >input</Button>
             </StackPanel>
+
         </ScrollViewer>
     </DockPanel>
 </Window>

@@ -1,50 +1,63 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
-using System;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace SimplePuzzle
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class MainWindow : Window
     {
-        public bool puzzle1 { get; set; }
-        public bool puzzle2 { get; set; }
-        public bool puzzle3 { get; set; }
-        public string flag1 { get; set; }
-        public string flag2 { get; set; }
-        public string flag3 { get; set; }
-        public Guid userNameGuid { get; set; }
-        public Guid passwordGuid { get; set; }
-        public MainViewModel vm { get; set; }
+        private Guid userNameGuid { get; set; }
+        private Guid passwordGuid { get; set; }
+        private string flag1 { get; set; }
+        private string flag2 { get; set; }
+        private bool[] Sol { get; set; } = new bool[3];
+        private bool[] Put { get; set; } = new bool[3];
+
 
         public MainWindow()
         {
             InitializeComponent();
-            var random = new Random();
-            puzzle1 = random.Next(2) == 1 ? true : false;
-            puzzle2 = random.Next(2) == 1 ? true : false;
-            puzzle3 = random.Next(2) == 1 ? true : false;
-            userNameGuid = Guid.NewGuid();
-            passwordGuid = Guid.NewGuid();
-            flag1 = Guid.NewGuid().ToString().Substring(0,8);
-            flag2 = Guid.NewGuid().ToString().Substring(0,8);
-            flag3 = Guid.NewGuid().ToString().Substring(0,8);
-            vm = new MainViewModel(puzzle1, puzzle2, puzzle3);
-            DataContext = vm;
+            generateSolutions();
+            generateGuids();
+            generateFlags();
         }
 
-        private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void generateSolutions()
         {
-            foreach (var item in e.AddedItems)
+            var random = new Random();
+            
+            for (int i = 0; i < 3; i++)
             {
-                var textBlock = (TextBlock) item;
-                if (textBlock.Text == "Item 4")
-                {
-                    MessageBox.Show("Do you really want to do it?");
-                }
+                checkedBoxRow ite = new checkedBoxRow();
+                Sol[i] = random.Next(2) == 1 ? true : false;
+                ite.PutMe = false;
+                ite.Solution = Sol[i];
+                Stage2DataGrid.Items.Add(ite);
             }
+        }
+        private void generateGuids()
+        {
+            userNameGuid = Guid.NewGuid();
+            passwordGuid = Guid.NewGuid();
+        }     
+        private void generateFlags()
+        {
+            flag1 = Guid.NewGuid().ToString().Substring(0, 4);
+            flag2 = Guid.NewGuid().ToString().Substring(0, 4);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -63,13 +76,27 @@ namespace SimplePuzzle
 
         private void Stage2Botton_Click(object sender, RoutedEventArgs e)
         {
-            bool a = vm.DataGridItems[0].PutMe;
-            bool b = vm.DataGridItems[1].PutMe;
-            bool c = vm.DataGridItems[2].PutMe;
-            if (a == puzzle1 && b == puzzle2 && c == puzzle3)
+            bool pass = true;
+            for (int i = 0; i < 3; i++)
+            {
+                checkedBoxRow ite = new checkedBoxRow();
+                ite = (checkedBoxRow)Stage2DataGrid.Items.GetItemAt(i);
+                Put[i] = ite.PutMe;
+            }            
+            
+            for (int i = 0; i < 3; i++)
+            {
+                if (Put[i] != Sol[i])
+                {
+                    pass = false;
+                }
+            }
+
+            if (pass)
             {
                 MessageBox.Show(flag2);
             }
+
         }
 
         private void Stage3Botton_Click(object sender, RoutedEventArgs e)
@@ -79,5 +106,6 @@ namespace SimplePuzzle
                 MessageBox.Show("Congratulation");
             }
         }
+
     }
 }
