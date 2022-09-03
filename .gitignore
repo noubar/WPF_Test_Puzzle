@@ -2,5 +2,6 @@
 src/ComplexPuzzle/bin
 src/SimplePuzzle/bin
 .vs
+src/Notifier/obj
 src/ComplexPuzzle/obj
 src/SimplePuzzle/obj

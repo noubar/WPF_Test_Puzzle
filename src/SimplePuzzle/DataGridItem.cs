@@ -1,19 +1,13 @@
-﻿using SimplePuzzle.Infrastructure;
+﻿
+using System.Reflection.PortableExecutable;
+using System.Windows.Controls;
+using System.Windows;
 
 namespace SimplePuzzle
 {
-    public class DataGridItem : ObservableObject
+    public class checkedBoxRow
     {
-        public bool PutMe
-        {
-            get => GetProperty<bool>();
-            set => SetProperty(value);
-        }
-
-        public bool Solution
-        {
-            get => GetProperty<bool>();
-            set => SetProperty(value);
-        }
+        public bool PutMe { get; set; }
+        public bool Solution { get; set; }
     }
 }
