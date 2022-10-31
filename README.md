@@ -61,4 +61,6 @@ Two of them are puzzles to solve one being simple the second being complex. Perf
 
 | **Notifier** 
 
-Notifier application is an empty windows window which is intended to use to cover and block other elements on windows desktop.
+Notifier application is an empty windows window which is intended to use to cover and block other elements on windows desktop.\
+![](ReadmeImages/012.png)
+Open the application and one second after loading the window it will close itself.
