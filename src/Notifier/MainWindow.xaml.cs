@@ -28,7 +28,7 @@ namespace Notifier
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Thread.Sleep(3000);
+            Thread.Sleep(1000);
             Application.Current.Shutdown();
         }
     }
