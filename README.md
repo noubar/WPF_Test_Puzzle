@@ -1,7 +1,10 @@
 ﻿# WPF_Test_Puzzle
 This repository is a mono repository contains three wpf test applications.
+1. Simple Puzzle
+1. Complex Puzzle
+1. Notifier (Blocker Window)
 
-Two of them are puzzles to solve one being simple the second being complex. Perfect for testing windows ui automation modules and for testing simple decision making processes. There is also a blocker window called Notifier, which closes itself after some time. It can be used to hinder the testing process, by appearing in front of other items randomly, to assure the stability of the automation process.
+The first two are puzzles to solve one being simple the second being complex. Perfect for testing windows ui automation modules and for testing simple decision making processes. There is also a blocker window called Notifier, which closes itself after some time. It can be used to hinder the testing process, by appearing in front of other items randomly, to assure the stability of the automation process.
 
 
 ## Test case descriptions 
